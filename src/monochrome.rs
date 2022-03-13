@@ -1,9 +1,9 @@
 use std::ops::Deref;
 
-use image::DynamicImage;
-use image::ImageFormat;
 use image::imageops::dither;
 use image::imageops::BiLevel;
+use image::DynamicImage;
+use image::ImageFormat;
 use napi::bindgen_prelude::*;
 use napi::Task;
 use napi_derive::napi;

@@ -1,7 +1,7 @@
 use std::ops::Deref;
 
-use image::{Luma, DynamicImage, ImageFormat};
 use image::{self, imageops::*};
+use image::{DynamicImage, ImageFormat, Luma};
 use napi::bindgen_prelude::*;
 use napi::Task;
 use napi_derive::napi;
