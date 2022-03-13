@@ -15,6 +15,4 @@ use napi_derive::napi;
 static ALLOC: mimalloc::MiMalloc = mimalloc::MiMalloc;
 
 #[napi]
-pub fn plus_100(input: u32) -> u32 {
-  input + 100
-}
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");

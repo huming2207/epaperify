@@ -71,7 +71,7 @@ impl ColorMap for Gray4bppLevel {
   }
 }
 
-struct Gray4bppConvertTask(Buffer);
+struct Gray4bppConvertTask(Buffer, String);
 
 #[napi]
 impl Task for Gray4bppConvertTask {
@@ -86,11 +86,21 @@ impl Task for Gray4bppConvertTask {
       Err(err) => return Err(Error::new(Status::Unknown, err.to_string())),
     };
 
+    let format = match ImageFormat::from_extension(&self.1) {
+      Some(format_str) => format_str,
+      None => {
+        return Err(Error::new(
+          Status::InvalidArg,
+          format!("Unknown image format: {}", self.1),
+        ))
+      }
+    };
+
     let mut luma8_img = img.grayscale().into_luma8();
     dither(&mut luma8_img, &Gray4bppLevel);
     let output_img = DynamicImage::from(image::DynamicImage::ImageLuma8(luma8_img));
     let mut output_vec: Vec<u8> = Vec::new();
-    match output_img.write_to(&mut output_vec, ImageFormat::Png) {
+    match output_img.write_to(&mut output_vec, format) {
       Ok(()) => return Ok(output_vec.into()),
       Err(err) => return Err(Error::new(Status::Unknown, err.to_string())),
     };
@@ -102,11 +112,14 @@ impl Task for Gray4bppConvertTask {
 }
 
 #[napi]
-fn to_4bpp(image: Buffer) -> AsyncTask<Gray4bppConvertTask> {
-  AsyncTask::new(Gray4bppConvertTask(image))
-}
-
-#[napi]
-fn to_4bpp_abortable(image: Buffer, signal: AbortSignal) -> AsyncTask<Gray4bppConvertTask> {
-  AsyncTask::with_signal(Gray4bppConvertTask(image), signal)
+fn to_4bpp(
+  image: Buffer,
+  format: Option<String>,
+  signal: Option<AbortSignal>,
+) -> AsyncTask<Gray4bppConvertTask> {
+  let actual_format = format.unwrap_or("png".to_string());
+  match signal {
+    Some(sig) => AsyncTask::with_signal(Gray4bppConvertTask(image, actual_format), sig),
+    None => AsyncTask::new(Gray4bppConvertTask(image, actual_format)),
+  }
 }
