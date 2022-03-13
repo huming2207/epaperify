@@ -1,4 +1,3 @@
-#![deny(clippy::all)]
 #![allow(dead_code)]
 
 pub mod gray_4bpp;
