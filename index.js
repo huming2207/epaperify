@@ -192,6 +192,10 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { plus100 } = nativeBinding
+const { to4Bpp, to4BppAbortable, toMonochrome, toMonochromeAbortable, plus100 } = nativeBinding
 
+module.exports.to4Bpp = to4Bpp
+module.exports.to4BppAbortable = to4BppAbortable
+module.exports.toMonochrome = toMonochrome
+module.exports.toMonochromeAbortable = toMonochromeAbortable
 module.exports.plus100 = plus100
