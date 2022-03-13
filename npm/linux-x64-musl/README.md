@@ -1,3 +1,3 @@
-# `epaperifylinux-x64-musl`
+# `epaperify-linux-x64-musl`
 
-This is the **x86_64-unknown-linux-musl** binary for `@napi-rs/package-template`
+This is the **x86_64-unknown-linux-musl** binary for `epaperify`
