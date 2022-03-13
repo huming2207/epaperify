@@ -20,7 +20,11 @@ Converts any image to 4-bit-per-pixel grayscale, with dithering to emulate 8-bit
   - `signal`: signal of `AbortController`
 
 ```ts
-export function toMonochrome(image: Buffer): Promise<Buffer>
+export function toMonochrome(
+  image: Buffer,
+  format?: string | undefined | null,
+  signal?: AbortSignal | undefined | null,
+): Promise<Buffer>
 ```
 
 Converts any image to 1-bit-per-pixel grayscale, with dithering to emulate 8-bit-per-pixel
