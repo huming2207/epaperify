@@ -227,7 +227,6 @@ jobs:
           - host: windows-latest
             target: x86_64-pc-windows-msvc
         node:
-          - '12'
           - '14'
           - '16'
     runs-on: ${{ matrix.settings.host }}
@@ -264,7 +263,6 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '12'
           - '14'
           - '16'
     runs-on: ubuntu-latest
@@ -301,7 +299,6 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '12'
           - '14'
           - '16'
     runs-on: ubuntu-latest
@@ -338,7 +335,6 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '12'
           - '14'
           - '16'
     runs-on: ubuntu-latest
@@ -409,7 +405,6 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '12'
           - '14'
           - '16'
     runs-on: ubuntu-latest
