@@ -1,4 +1,8 @@
 #![deny(clippy::all)]
+#![allow(dead_code)]
+
+pub mod gray_4bpp;
+pub mod monochrome;
 
 use napi_derive::napi;
 
