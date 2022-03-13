@@ -1,6 +1,6 @@
 {
   "name": "epaperify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Image pre-processing library for e-paper",
   "main": "index.js",
   "repository": "https://github.com/huming2207/epaperify",
