@@ -1,3 +1,3 @@
-# `@jacksonhu/epaperifylinux-arm-gnueabihf`
+# `epaperifylinux-arm-gnueabihf`
 
 This is the **armv7-unknown-linux-gnueabihf** binary for `@napi-rs/package-template`

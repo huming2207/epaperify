@@ -1,5 +1,5 @@
 {
-  "name": "@jacksonhu/epaperify-darwin-arm64",
+  "name": "epaperify-darwin-arm64",
   "version": "1.0.0",
   "os": [
     "darwin"

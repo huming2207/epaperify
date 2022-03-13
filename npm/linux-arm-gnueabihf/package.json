@@ -1,5 +1,5 @@
 {
-  "name": "@jacksonhu/epaperify-linux-arm-gnueabihf",
+  "name": "epaperify-linux-arm-gnueabihf",
   "version": "1.0.0",
   "os": [
     "linux"

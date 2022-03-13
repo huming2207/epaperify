@@ -1,5 +1,5 @@
 {
-  "name": "@jacksonhu/epaperify-android-arm64",
+  "name": "epaperify-android-arm64",
   "version": "1.0.0",
   "os": [
     "android"
