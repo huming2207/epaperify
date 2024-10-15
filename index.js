@@ -284,8 +284,9 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { to4Bpp, toMonochrome, VERSION } = nativeBinding
+const { to4Bpp, to4BppWithTextMetadata, toMonochrome, VERSION } = nativeBinding
 
 module.exports.to4Bpp = to4Bpp
+module.exports.to4BppWithTextMetadata = to4BppWithTextMetadata
 module.exports.toMonochrome = toMonochrome
 module.exports.VERSION = VERSION

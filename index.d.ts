@@ -8,6 +8,12 @@ export declare function to4Bpp(
   format?: string | undefined | null,
   signal?: AbortSignal | undefined | null,
 ): Promise<Buffer>
+export declare function to4BppWithTextMetadata(
+  image: Buffer,
+  textChunks?: Record<string, string> | undefined | null,
+  compressed?: boolean | undefined | null,
+  signal?: AbortSignal | undefined | null,
+): Promise<Buffer>
 export declare function toMonochrome(
   image: Buffer,
   format?: string | undefined | null,
