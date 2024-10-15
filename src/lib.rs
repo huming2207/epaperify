@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 pub mod gray_4bpp;
+pub mod gray_4bpp_with_text;
 pub mod monochrome;
 
 use napi_derive::napi;
