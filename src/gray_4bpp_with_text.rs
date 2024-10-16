@@ -74,7 +74,7 @@ impl ColorMap for Gray4bppLevel {
   }
 }
 
-struct Gray4bppWithTextConvertTask(Buffer, HashMap<String, String>, bool);
+struct Gray4bppWithTextConvertTask(Buffer, HashMap<String, String>, bool, bool);
 
 #[napi]
 impl Task for Gray4bppWithTextConvertTask {
@@ -115,7 +115,12 @@ impl Task for Gray4bppWithTextConvertTask {
       // Set color type to Grayscale (Luma8) and bit depth
       encoder.set_color(png::ColorType::Grayscale);
       encoder.set_depth(png::BitDepth::Eight);
-      encoder.set_compression(png::Compression::Best);
+
+      if self.3 {
+        encoder.set_compression(png::Compression::Best);
+      } else {
+        encoder.set_compression(png::Compression::Default);
+      }
 
       // Create the PNG writer and write the image data
       let mut png_writer = encoder
@@ -138,19 +143,22 @@ impl Task for Gray4bppWithTextConvertTask {
 fn to_4bpp_with_text_metadata(
   image: Buffer,
   text_chunks: Option<HashMap<String, String>>,
-  compressed: Option<bool>,
+  compressed_text: Option<bool>,
+  best_compression: Option<bool>,
   signal: Option<AbortSignal>,
 ) -> AsyncTask<Gray4bppWithTextConvertTask> {
-  let use_zext = compressed.unwrap_or(false);
+  let use_zext = compressed_text.unwrap_or(false);
+  let best_compress = best_compression.unwrap_or(false);
   match signal {
     Some(sig) => AsyncTask::with_signal(
-      Gray4bppWithTextConvertTask(image, text_chunks.unwrap_or(HashMap::new()), use_zext),
+      Gray4bppWithTextConvertTask(image, text_chunks.unwrap_or(HashMap::new()), use_zext, best_compress),
       sig,
     ),
     None => AsyncTask::new(Gray4bppWithTextConvertTask(
       image,
       text_chunks.unwrap_or(HashMap::new()),
       use_zext,
+      best_compress
     )),
   }
 }
