@@ -166,7 +166,6 @@ jobs:
             freebsd-version
             yarn install
             yarn build
-            rm -rf node_modules
             rm -rf target
             rm -rf .yarn/cache
       - name: Upload artifact
