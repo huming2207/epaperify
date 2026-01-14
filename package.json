@@ -111,21 +111,5 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@4.12.0",
-  "optionalDependencies": {
-    "@huming2207/epaperify-win32-x64-msvc": "2.0.1",
-    "@huming2207/epaperify-darwin-x64": "2.0.1",
-    "@huming2207/epaperify-linux-x64-gnu": "2.0.1",
-    "@huming2207/epaperify-linux-x64-musl": "2.0.1",
-    "@huming2207/epaperify-linux-arm64-gnu": "2.0.1",
-    "@huming2207/epaperify-win32-ia32-msvc": "2.0.1",
-    "@huming2207/epaperify-linux-arm-gnueabihf": "2.0.1",
-    "@huming2207/epaperify-darwin-arm64": "2.0.1",
-    "@huming2207/epaperify-android-arm64": "2.0.1",
-    "@huming2207/epaperify-freebsd-x64": "2.0.1",
-    "@huming2207/epaperify-linux-arm64-musl": "2.0.1",
-    "@huming2207/epaperify-win32-arm64-msvc": "2.0.1",
-    "@huming2207/epaperify-android-arm-eabi": "2.0.1",
-    "@huming2207/epaperify-wasm32-wasi": "2.0.1"
-  }
+  "packageManager": "yarn@4.12.0"
 }

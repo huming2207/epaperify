@@ -33,6 +33,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@huming2207/epaperify@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@huming2207/epaperify@workspace:."
+  dependencies:
+    "@emnapi/core": "npm:^1.5.0"
+    "@emnapi/runtime": "npm:^1.5.0"
+    "@napi-rs/cli": "npm:^3.2.0"
+    "@oxc-node/core": "npm:^0.0.35"
+    "@taplo/cli": "npm:^0.7.0"
+    "@tybys/wasm-util": "npm:^0.10.0"
+    ava: "npm:^6.4.1"
+    chalk: "npm:^5.6.2"
+    husky: "npm:^9.1.7"
+    lint-staged: "npm:^16.1.6"
+    npm-run-all2: "npm:^8.0.4"
+    oxlint: "npm:^1.14.0"
+    prettier: "npm:^3.6.2"
+    tinybench: "npm:^6.0.0"
+    typescript: "npm:^5.9.2"
+  languageName: unknown
+  linkType: soft
+
 "@inquirer/ansi@npm:^2.0.3":
   version: 2.0.3
   resolution: "@inquirer/ansi@npm:2.0.3"
@@ -1875,28 +1897,6 @@ __metadata:
   checksum: 10c0/fb26434b0b581ab397039e51ff3c92b34924a98b2039dcb47e41b7bca577b9dbf134a8eadb364415c74464b682e2d3afe1a4c0eb9873dc44ea814c5d3103331d
   languageName: node
   linkType: hard
-
-"epaperify@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "epaperify@workspace:."
-  dependencies:
-    "@emnapi/core": "npm:^1.5.0"
-    "@emnapi/runtime": "npm:^1.5.0"
-    "@napi-rs/cli": "npm:^3.2.0"
-    "@oxc-node/core": "npm:^0.0.35"
-    "@taplo/cli": "npm:^0.7.0"
-    "@tybys/wasm-util": "npm:^0.10.0"
-    ava: "npm:^6.4.1"
-    chalk: "npm:^5.6.2"
-    husky: "npm:^9.1.7"
-    lint-staged: "npm:^16.1.6"
-    npm-run-all2: "npm:^8.0.4"
-    oxlint: "npm:^1.14.0"
-    prettier: "npm:^3.6.2"
-    tinybench: "npm:^6.0.0"
-    typescript: "npm:^5.9.2"
-  languageName: unknown
-  linkType: soft
 
 "es-toolkit@npm:^1.41.0":
   version: 1.43.0
