@@ -122,3 +122,5 @@ Cargo.lock
 *.node
 *-4bpp.png
 *-mono.png
+*.wasm
+__test__/chickenfeet-4bpp-with-tEXt.png
