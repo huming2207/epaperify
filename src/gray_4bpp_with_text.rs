@@ -151,14 +151,19 @@ fn to_4bpp_with_text_metadata(
   let best_compress = best_compression.unwrap_or(false);
   match signal {
     Some(sig) => AsyncTask::with_signal(
-      Gray4bppWithTextConvertTask(image, text_chunks.unwrap_or(HashMap::new()), use_zext, best_compress),
+      Gray4bppWithTextConvertTask(
+        image,
+        text_chunks.unwrap_or(HashMap::new()),
+        use_zext,
+        best_compress,
+      ),
       sig,
     ),
     None => AsyncTask::new(Gray4bppWithTextConvertTask(
       image,
       text_chunks.unwrap_or(HashMap::new()),
       use_zext,
-      best_compress
+      best_compress,
     )),
   }
 }

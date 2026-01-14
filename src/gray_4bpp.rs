@@ -100,7 +100,7 @@ impl Task for Gray4bppConvertTask {
     let mut luma8_img = img.grayscale().into_luma8();
     dither(&mut luma8_img, &Gray4bppLevel);
     let output_img = DynamicImage::from(image::DynamicImage::ImageLuma8(luma8_img));
-    let mut output_vec  = Cursor::new(Vec::new());
+    let mut output_vec = Cursor::new(Vec::new());
     match output_img.write_to(&mut output_vec, format) {
       Ok(()) => return Ok(output_vec.into_inner().into()),
       Err(err) => return Err(Error::new(Status::Unknown, err.to_string())),
