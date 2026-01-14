@@ -1,8 +1,8 @@
 [package]
 authors = ["Jackson Ming Hu <huming2207@gmail.com>"]
 edition = "2021"
-name = "epaperify"
-version = "2.0.0"
+name    = "epaperify"
+version = "2.0.2"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,16 +10,16 @@ version = "2.0.0"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi = { version = "3" }
-napi-derive = { version = "3" }
-image = "0.25.9"
-serde = "1"
+image        = "0.25.9"
+napi         = { version = "3" }
+napi-derive  = { version = "3" }
+png          = "0.18.0"
+serde        = "1"
 serde_derive = "1"
-serde_json = "1"
-png = "0.18.0"
+serde_json   = "1"
 
 [target.'cfg(all(any(windows, unix), target_arch = "x86_64", not(target_env = "musl")))'.dependencies]
-mimalloc = {version = "0.1"}
+mimalloc = { version = "0.1" }
 
 
 [build-dependencies]
