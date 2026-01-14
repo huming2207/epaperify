@@ -12,11 +12,11 @@ crate-type = ["cdylib"]
 [dependencies]
 napi = { version = "3" }
 napi-derive = { version = "3" }
-image = "0.25"
+image = "0.25.9"
 serde = "1"
 serde_derive = "1"
 serde_json = "1"
-png = "0.17.14"
+png = "0.18.0"
 
 [target.'cfg(all(any(windows, unix), target_arch = "x86_64", not(target_env = "musl")))'.dependencies]
 mimalloc = {version = "0.1"}

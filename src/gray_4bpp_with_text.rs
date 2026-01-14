@@ -117,9 +117,9 @@ impl Task for Gray4bppWithTextConvertTask {
       encoder.set_depth(png::BitDepth::Eight);
 
       if self.3 {
-        encoder.set_compression(png::Compression::Best);
+        encoder.set_compression(png::Compression::High);
       } else {
-        encoder.set_compression(png::Compression::Default);
+        encoder.set_compression(png::Compression::Balanced);
       }
 
       // Create the PNG writer and write the image data
