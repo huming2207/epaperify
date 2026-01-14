@@ -1,12 +1,16 @@
 {
-  "name": "@huming2207/epaperify-android-arm-eabi",
+  "name": "@huming2207/epaperify-wasm32-wasi",
   "version": "2.0.1",
   "cpu": [
-    "arm"
+    "wasm32"
   ],
-  "main": "epaperify.android-arm-eabi.node",
+  "main": "epaperify.wasi.cjs",
   "files": [
-    "epaperify.android-arm-eabi.node"
+    "epaperify.wasm32-wasi.wasm",
+    "epaperify.wasi.cjs",
+    "epaperify.wasi-browser.js",
+    "wasi-worker.mjs",
+    "wasi-worker-browser.mjs"
   ],
   "description": "Image pre-processing library for e-paper",
   "keywords": [
@@ -19,14 +23,15 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">= 10"
+    "node": ">=14.0.0"
   },
   "repository": "https://github.com/huming2207/epaperify",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "os": [
-    "android"
-  ]
+  "browser": "epaperify.wasi-browser.js",
+  "dependencies": {
+    "@napi-rs/wasm-runtime": "^1.1.1"
+  }
 }

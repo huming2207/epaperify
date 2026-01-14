@@ -1,6 +1,6 @@
 {
-  "name": "epaperify",
-  "version": "2.0.0",
+  "name": "@huming2207/epaperify",
+  "version": "2.0.1",
   "description": "Image pre-processing library for e-paper",
   "main": "index.js",
   "repository": "https://github.com/huming2207/epaperify",
@@ -43,7 +43,7 @@
     "node": ">= 10"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
+    "registry": "https://npm.pkg.github.com/",
     "access": "public"
   },
   "scripts": {
@@ -111,5 +111,21 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0",
+  "optionalDependencies": {
+    "@huming2207/epaperify-win32-x64-msvc": "2.0.1",
+    "@huming2207/epaperify-darwin-x64": "2.0.1",
+    "@huming2207/epaperify-linux-x64-gnu": "2.0.1",
+    "@huming2207/epaperify-linux-x64-musl": "2.0.1",
+    "@huming2207/epaperify-linux-arm64-gnu": "2.0.1",
+    "@huming2207/epaperify-win32-ia32-msvc": "2.0.1",
+    "@huming2207/epaperify-linux-arm-gnueabihf": "2.0.1",
+    "@huming2207/epaperify-darwin-arm64": "2.0.1",
+    "@huming2207/epaperify-android-arm64": "2.0.1",
+    "@huming2207/epaperify-freebsd-x64": "2.0.1",
+    "@huming2207/epaperify-linux-arm64-musl": "2.0.1",
+    "@huming2207/epaperify-win32-arm64-msvc": "2.0.1",
+    "@huming2207/epaperify-android-arm-eabi": "2.0.1",
+    "@huming2207/epaperify-wasm32-wasi": "2.0.1"
+  }
 }

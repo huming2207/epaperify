@@ -1,9 +1,6 @@
 {
-  "name": "epaperify-linux-x64-musl",
-  "version": "2.0.0",
-  "os": [
-    "linux"
-  ],
+  "name": "@huming2207/epaperify-linux-x64-musl",
+  "version": "2.0.1",
   "cpu": [
     "x64"
   ],
@@ -11,7 +8,7 @@
   "files": [
     "epaperify.linux-x64-musl.node"
   ],
-  "description": "Template project for writing node package with napi-rs",
+  "description": "Image pre-processing library for e-paper",
   "keywords": [
     "napi-rs",
     "NAPI",
@@ -24,9 +21,15 @@
   "engines": {
     "node": ">= 10"
   },
+  "repository": "https://github.com/huming2207/epaperify",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "https://github.com/huming2207/epaperify.git"
+  "os": [
+    "linux"
+  ],
+  "libc": [
+    "musl"
+  ]
 }

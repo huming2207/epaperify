@@ -75,10 +75,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-android-arm64')
-        const bindingPackageVersion = require('epaperify-android-arm64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-android-arm64')
+        const bindingPackageVersion = require('@huming2207/epaperify-android-arm64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -91,10 +91,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-android-arm-eabi')
-        const bindingPackageVersion = require('epaperify-android-arm-eabi/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-android-arm-eabi')
+        const bindingPackageVersion = require('@huming2207/epaperify-android-arm-eabi/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -112,10 +112,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-win32-x64-gnu')
-        const bindingPackageVersion = require('epaperify-win32-x64-gnu/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-win32-x64-gnu')
+        const bindingPackageVersion = require('@huming2207/epaperify-win32-x64-gnu/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -128,10 +128,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-win32-x64-msvc')
-        const bindingPackageVersion = require('epaperify-win32-x64-msvc/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-win32-x64-msvc')
+        const bindingPackageVersion = require('@huming2207/epaperify-win32-x64-msvc/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -145,10 +145,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-win32-ia32-msvc')
-        const bindingPackageVersion = require('epaperify-win32-ia32-msvc/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-win32-ia32-msvc')
+        const bindingPackageVersion = require('@huming2207/epaperify-win32-ia32-msvc/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -161,10 +161,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-win32-arm64-msvc')
-        const bindingPackageVersion = require('epaperify-win32-arm64-msvc/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-win32-arm64-msvc')
+        const bindingPackageVersion = require('@huming2207/epaperify-win32-arm64-msvc/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -180,10 +180,10 @@ function requireNative() {
       loadErrors.push(e)
     }
     try {
-      const binding = require('epaperify-darwin-universal')
-      const bindingPackageVersion = require('epaperify-darwin-universal/package.json').version
-      if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-        throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+      const binding = require('@huming2207/epaperify-darwin-universal')
+      const bindingPackageVersion = require('@huming2207/epaperify-darwin-universal/package.json').version
+      if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+        throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
       }
       return binding
     } catch (e) {
@@ -196,10 +196,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-darwin-x64')
-        const bindingPackageVersion = require('epaperify-darwin-x64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-darwin-x64')
+        const bindingPackageVersion = require('@huming2207/epaperify-darwin-x64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -212,10 +212,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-darwin-arm64')
-        const bindingPackageVersion = require('epaperify-darwin-arm64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-darwin-arm64')
+        const bindingPackageVersion = require('@huming2207/epaperify-darwin-arm64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -232,10 +232,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-freebsd-x64')
-        const bindingPackageVersion = require('epaperify-freebsd-x64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-freebsd-x64')
+        const bindingPackageVersion = require('@huming2207/epaperify-freebsd-x64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -248,10 +248,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-freebsd-arm64')
-        const bindingPackageVersion = require('epaperify-freebsd-arm64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-freebsd-arm64')
+        const bindingPackageVersion = require('@huming2207/epaperify-freebsd-arm64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -269,10 +269,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-x64-musl')
-          const bindingPackageVersion = require('epaperify-linux-x64-musl/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-x64-musl')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-x64-musl/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -285,10 +285,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-x64-gnu')
-          const bindingPackageVersion = require('epaperify-linux-x64-gnu/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-x64-gnu')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-x64-gnu/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -303,10 +303,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-arm64-musl')
-          const bindingPackageVersion = require('epaperify-linux-arm64-musl/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-arm64-musl')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-arm64-musl/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -319,10 +319,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-arm64-gnu')
-          const bindingPackageVersion = require('epaperify-linux-arm64-gnu/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-arm64-gnu')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-arm64-gnu/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -337,10 +337,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-arm-musleabihf')
-          const bindingPackageVersion = require('epaperify-linux-arm-musleabihf/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-arm-musleabihf')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-arm-musleabihf/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -353,10 +353,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-arm-gnueabihf')
-          const bindingPackageVersion = require('epaperify-linux-arm-gnueabihf/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-arm-gnueabihf')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-arm-gnueabihf/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -371,10 +371,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-loong64-musl')
-          const bindingPackageVersion = require('epaperify-linux-loong64-musl/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-loong64-musl')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-loong64-musl/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -387,10 +387,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-loong64-gnu')
-          const bindingPackageVersion = require('epaperify-linux-loong64-gnu/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-loong64-gnu')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-loong64-gnu/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -405,10 +405,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-riscv64-musl')
-          const bindingPackageVersion = require('epaperify-linux-riscv64-musl/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-riscv64-musl')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-riscv64-musl/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -421,10 +421,10 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('epaperify-linux-riscv64-gnu')
-          const bindingPackageVersion = require('epaperify-linux-riscv64-gnu/package.json').version
-          if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-            throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+          const binding = require('@huming2207/epaperify-linux-riscv64-gnu')
+          const bindingPackageVersion = require('@huming2207/epaperify-linux-riscv64-gnu/package.json').version
+          if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+            throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
           return binding
         } catch (e) {
@@ -438,10 +438,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-linux-ppc64-gnu')
-        const bindingPackageVersion = require('epaperify-linux-ppc64-gnu/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-linux-ppc64-gnu')
+        const bindingPackageVersion = require('@huming2207/epaperify-linux-ppc64-gnu/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -454,10 +454,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-linux-s390x-gnu')
-        const bindingPackageVersion = require('epaperify-linux-s390x-gnu/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-linux-s390x-gnu')
+        const bindingPackageVersion = require('@huming2207/epaperify-linux-s390x-gnu/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -474,10 +474,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-openharmony-arm64')
-        const bindingPackageVersion = require('epaperify-openharmony-arm64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-openharmony-arm64')
+        const bindingPackageVersion = require('@huming2207/epaperify-openharmony-arm64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -490,10 +490,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-openharmony-x64')
-        const bindingPackageVersion = require('epaperify-openharmony-x64/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-openharmony-x64')
+        const bindingPackageVersion = require('@huming2207/epaperify-openharmony-x64/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -506,10 +506,10 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('epaperify-openharmony-arm')
-        const bindingPackageVersion = require('epaperify-openharmony-arm/package.json').version
-        if (bindingPackageVersion !== '1.2.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          throw new Error(`Native binding package version mismatch, expected 1.2.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
+        const binding = require('@huming2207/epaperify-openharmony-arm')
+        const bindingPackageVersion = require('@huming2207/epaperify-openharmony-arm/package.json').version
+        if (bindingPackageVersion !== '2.0.1' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
+          throw new Error(`Native binding package version mismatch, expected 2.0.1 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
         return binding
       } catch (e) {
@@ -538,7 +538,7 @@ if (!nativeBinding || process.env.NAPI_RS_FORCE_WASI) {
   }
   if (!nativeBinding || process.env.NAPI_RS_FORCE_WASI) {
     try {
-      wasiBinding = require('epaperify-wasm32-wasi')
+      wasiBinding = require('@huming2207/epaperify-wasm32-wasi')
       nativeBinding = wasiBinding
     } catch (err) {
       if (process.env.NAPI_RS_FORCE_WASI) {

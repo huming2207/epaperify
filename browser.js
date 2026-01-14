@@ -1,1 +1,1 @@
-export * from 'epaperify-wasm32-wasi'
+export * from '@huming2207/epaperify-wasm32-wasi'

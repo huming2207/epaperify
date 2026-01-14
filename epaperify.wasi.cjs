@@ -39,9 +39,9 @@ if (__nodeFs.existsSync(__wasmDebugFilePath)) {
   __wasmFilePath = __wasmDebugFilePath
 } else if (!__nodeFs.existsSync(__wasmFilePath)) {
   try {
-    __wasmFilePath = require.resolve('epaperify-wasm32-wasi/epaperify.wasm32-wasi.wasm')
+    __wasmFilePath = require.resolve('@huming2207/epaperify-wasm32-wasi/epaperify.wasm32-wasi.wasm')
   } catch {
-    throw new Error('Cannot find epaperify.wasm32-wasi.wasm file, and epaperify-wasm32-wasi package is not installed.')
+    throw new Error('Cannot find epaperify.wasm32-wasi.wasm file, and @huming2207/epaperify-wasm32-wasi package is not installed.')
   }
 }
 
