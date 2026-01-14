@@ -2,7 +2,7 @@
 authors = ["Jackson Ming Hu <huming2207@gmail.com>"]
 edition = "2021"
 name = "epaperify"
-version = "1.0.3"
+version = "2.0.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,17 +10,8 @@ version = "1.0.3"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi = { version = "2", default-features = false, features = [ 
-  "tokio_fs",
-  "napi8",
-  "tokio_rt",
-  "serde-json",
-  "async",
-  "experimental",
-  "latin1",
-  "chrono_date"
-]}
-napi-derive = { version = "2", features = ["type-def"] }
+napi = { version = "3" }
+napi-derive = { version = "3" }
 image = "0.25"
 serde = "1"
 serde_derive = "1"
@@ -30,8 +21,10 @@ png = "0.17.14"
 [target.'cfg(all(any(windows, unix), target_arch = "x86_64", not(target_env = "musl")))'.dependencies]
 mimalloc = {version = "0.1"}
 
+
 [build-dependencies]
-napi-build = "1"
+napi-build = "2"
 
 [profile.release]
-lto = true
+lto   = true
+strip = "symbols"
