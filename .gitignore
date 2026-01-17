@@ -123,7 +123,8 @@ Cargo.lock
 *-4bpp.png
 *-mono.png
 *.wasm
-__test__/chickenfeet-4bpp-with-tEXt.png
+/__test__/*.png
+/__test__/*.qoi
 .pnp.*
 .yarn/*
 !.yarn/patches
