@@ -56,7 +56,12 @@ const {
   },
 })
 export default __napiModule.exports
+export const diffTwoImages = __napiModule.exports.diffTwoImages
+export const imageToQoi = __napiModule.exports.imageToQoi
+export const QoiChannels = __napiModule.exports.QoiChannels
 export const to4Bpp = __napiModule.exports.to4Bpp
 export const to4BppWithTextMetadata = __napiModule.exports.to4BppWithTextMetadata
 export const toMonochrome = __napiModule.exports.toMonochrome
+export const toRgb4Bpp = __napiModule.exports.toRgb4Bpp
+export const toRgb4BppWithTextMetadata = __napiModule.exports.toRgb4BppWithTextMetadata
 export const VERSION = __napiModule.exports.VERSION

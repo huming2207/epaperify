@@ -108,7 +108,12 @@ const { instance: __napiInstance, module: __wasiModule, napiModule: __napiModule
   },
 })
 module.exports = __napiModule.exports
+module.exports.diffTwoImages = __napiModule.exports.diffTwoImages
+module.exports.imageToQoi = __napiModule.exports.imageToQoi
+module.exports.QoiChannels = __napiModule.exports.QoiChannels
 module.exports.to4Bpp = __napiModule.exports.to4Bpp
 module.exports.to4BppWithTextMetadata = __napiModule.exports.to4BppWithTextMetadata
 module.exports.toMonochrome = __napiModule.exports.toMonochrome
+module.exports.toRgb4Bpp = __napiModule.exports.toRgb4Bpp
+module.exports.toRgb4BppWithTextMetadata = __napiModule.exports.toRgb4BppWithTextMetadata
 module.exports.VERSION = __napiModule.exports.VERSION

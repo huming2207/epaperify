@@ -3,6 +3,10 @@
 pub mod gray_4bpp;
 pub mod gray_4bpp_with_text;
 pub mod monochrome;
+pub mod rgb_4bpp;
+pub mod rgb_4bpp_with_text;
+pub mod diff;
+pub mod image_to_qoi;
 
 use napi_derive::napi;
 
