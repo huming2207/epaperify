@@ -56,7 +56,7 @@ const {
   },
 })
 export default __napiModule.exports
-export const diffTwoImages = __napiModule.exports.diffTwoImages
+export const diffTwoQoiImages = __napiModule.exports.diffTwoQoiImages
 export const imageToQoi = __napiModule.exports.imageToQoi
 export const QoiChannels = __napiModule.exports.QoiChannels
 export const to4Bpp = __napiModule.exports.to4Bpp

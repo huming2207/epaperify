@@ -576,6 +576,9 @@ if (!nativeBinding) {
 }
 
 module.exports = nativeBinding
+module.exports.diffTwoQoiImages = nativeBinding.diffTwoQoiImages
+module.exports.imageToQoi = nativeBinding.imageToQoi
+module.exports.QoiChannels = nativeBinding.QoiChannels
 module.exports.to4Bpp = nativeBinding.to4Bpp
 module.exports.to4BppWithTextMetadata = nativeBinding.to4BppWithTextMetadata
 module.exports.toMonochrome = nativeBinding.toMonochrome

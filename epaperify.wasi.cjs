@@ -108,7 +108,7 @@ const { instance: __napiInstance, module: __wasiModule, napiModule: __napiModule
   },
 })
 module.exports = __napiModule.exports
-module.exports.diffTwoImages = __napiModule.exports.diffTwoImages
+module.exports.diffTwoQoiImages = __napiModule.exports.diffTwoQoiImages
 module.exports.imageToQoi = __napiModule.exports.imageToQoi
 module.exports.QoiChannels = __napiModule.exports.QoiChannels
 module.exports.to4Bpp = __napiModule.exports.to4Bpp

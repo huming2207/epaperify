@@ -133,3 +133,4 @@ Cargo.lock
 !.yarn/sdks
 !.yarn/versions
 /npm
+.DS_Store

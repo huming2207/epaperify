@@ -19,7 +19,6 @@ qoi          = "0.4.1"
 serde        = "1"
 serde_derive = "1"
 serde_json   = "1"
-wide         = "1.1.1"
 
 [target.'cfg(all(any(windows, unix), target_arch = "x86_64", not(target_env = "musl")))'.dependencies]
 mimalloc = { version = "0.1" }

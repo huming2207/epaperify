@@ -1,9 +1,9 @@
 use std::ops::Deref;
 
+use image::{self};
 use napi::bindgen_prelude::*;
 use napi::Task;
 use napi_derive::napi;
-use image::{self};
 
 #[napi]
 #[derive(Clone, Copy)]
@@ -26,7 +26,7 @@ impl Task for ImageToQoiTask {
     let input = (&self.image).deref();
     // Copy to Vec to avoid V8 memory issues/race conditions if any, matching other files
     let buf = Vec::<u8>::from(input);
-    
+
     let img = match image::load_from_memory(&buf) {
       Ok(image) => image,
       Err(err) => return Err(Error::new(Status::InvalidArg, err.to_string())),
@@ -47,7 +47,7 @@ impl Task for ImageToQoiTask {
       Ok(encoder) => encoder,
       Err(err) => return Err(Error::new(Status::GenericFailure, err.to_string())),
     };
-    
+
     match encoder.encode_to_vec() {
       Ok(buf) => Ok(buf.into()),
       Err(err) => Err(Error::new(Status::GenericFailure, err.to_string())),
@@ -66,7 +66,7 @@ fn image_to_qoi(
   signal: Option<AbortSignal>,
 ) -> AsyncTask<ImageToQoiTask> {
   let channels = channels.unwrap_or(QoiChannels::Rgb);
-  
+
   match signal {
     Some(sig) => AsyncTask::with_signal(ImageToQoiTask { image, channels }, sig),
     None => AsyncTask::new(ImageToQoiTask { image, channels }),
