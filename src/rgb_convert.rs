@@ -24,10 +24,12 @@ impl Task for Rgb4bppConvertTask {
 
     let format = match ImageFormat::from_extension(&self.1) {
       Some(format) => format,
-      None => return Err(Error::new(
-        Status::InvalidArg,
-        format!("Unknown image format: {}", self.1),
-      )),
+      None => {
+        return Err(Error::new(
+          Status::InvalidArg,
+          format!("Unknown image format: {}", self.1),
+        ))
+      }
     };
 
     let rgb8_img = img.into_rgb8();
