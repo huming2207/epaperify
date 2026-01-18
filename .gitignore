@@ -125,6 +125,7 @@ Cargo.lock
 *.wasm
 /__test__/*.png
 /__test__/*.qoi
+/__test__/*.bin
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -134,3 +135,5 @@ Cargo.lock
 !.yarn/versions
 /npm
 .DS_Store
+!/__test__/countdown-18.png
+!/__test__/countdown-56.png

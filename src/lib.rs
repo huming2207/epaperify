@@ -1,12 +1,12 @@
 #![allow(dead_code)]
 
 pub mod diff;
-pub mod gray_4bpp;
-pub mod gray_4bpp_with_text;
-pub mod image_to_qoi;
+pub mod grey_4bpp;
+pub mod grey_4bpp_with_text;
+pub mod qoi_convert;
 pub mod monochrome;
-pub mod rgb_4bpp;
-pub mod rgb_4bpp_with_text;
+pub mod rgb_convert;
+pub mod png_convert;
 
 use napi_derive::napi;
 

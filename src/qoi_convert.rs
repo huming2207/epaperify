@@ -60,7 +60,7 @@ impl Task for ImageToQoiTask {
 }
 
 #[napi]
-fn image_to_qoi(
+fn to_qoi(
   image: Buffer,
   channels: Option<QoiChannels>,
   signal: Option<AbortSignal>,

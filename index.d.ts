@@ -6,24 +6,18 @@ export declare function diffTwoQoiImages(
   signal?: AbortSignal | undefined | null,
 ): Promise<Buffer>
 
-export declare function imageToQoi(
-  image: Buffer,
-  channels?: QoiChannels | undefined | null,
-  signal?: AbortSignal | undefined | null,
-): Promise<Buffer>
-
 export declare const enum QoiChannels {
   Rgb = 3,
   Rgba = 4,
 }
 
-export declare function to4Bpp(
+export declare function toDitheredGreyImage(
   image: Buffer,
   format?: string | undefined | null,
   signal?: AbortSignal | undefined | null,
 ): Promise<Buffer>
 
-export declare function to4BppWithTextMetadata(
+export declare function toDitheredGreyWithPngTxt(
   image: Buffer,
   textChunks?: Record<string, string> | undefined | null,
   compressedText?: boolean | undefined | null,
@@ -37,17 +31,23 @@ export declare function toMonochrome(
   signal?: AbortSignal | undefined | null,
 ): Promise<Buffer>
 
-export declare function toRgb4Bpp(
-  image: Buffer,
-  format?: string | undefined | null,
-  signal?: AbortSignal | undefined | null,
-): Promise<Buffer>
-
-export declare function toRgb4BppWithTextMetadata(
+export declare function toPng(
   image: Buffer,
   textChunks?: Record<string, string> | undefined | null,
   compressedText?: boolean | undefined | null,
   bestCompression?: boolean | undefined | null,
+  signal?: AbortSignal | undefined | null,
+): Promise<Buffer>
+
+export declare function toQoi(
+  image: Buffer,
+  channels?: QoiChannels | undefined | null,
+  signal?: AbortSignal | undefined | null,
+): Promise<Buffer>
+
+export declare function toRgbImage(
+  image: Buffer,
+  format?: string | undefined | null,
   signal?: AbortSignal | undefined | null,
 ): Promise<Buffer>
 

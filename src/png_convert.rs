@@ -2,51 +2,11 @@ use std::collections::HashMap;
 use std::io::BufWriter;
 use std::ops::Deref;
 
-use image::Rgb;
-use image::{self, imageops::*};
+use image;
 use napi::bindgen_prelude::*;
 use napi::Task;
 use napi_derive::napi;
 use png::Encoder;
-
-#[derive(Clone, Copy)]
-pub struct Rgb4bppLevel;
-
-impl ColorMap for Rgb4bppLevel {
-  type Color = Rgb<u8>;
-
-  #[inline(always)]
-  fn index_of(&self, color: &Rgb<u8>) -> usize {
-    let rgb = color.0;
-    let r = rgb[0] >> 4;
-    let g = rgb[1] >> 4;
-    let b = rgb[2] >> 4;
-    ((r as usize) << 8) | ((g as usize) << 4) | (b as usize)
-  }
-
-  #[inline(always)]
-  fn lookup(&self, idx: usize) -> Option<Self::Color> {
-    if idx > 0xFFF {
-      return None;
-    }
-    let r = ((idx >> 8) & 0xF) as u8 * 16;
-    let g = ((idx >> 4) & 0xF) as u8 * 16;
-    let b = (idx & 0xF) as u8 * 16;
-    Some(Rgb([r, g, b]))
-  }
-
-  /// Indicate NeuQuant implements `lookup`.
-  fn has_lookup(&self) -> bool {
-    true
-  }
-
-  #[inline(always)]
-  fn map_color(&self, color: &mut Rgb<u8>) {
-    for c in &mut color.0 {
-      *c = *c & 0xF0;
-    }
-  }
-}
 
 struct Rgb4bppWithTextConvertTask(Buffer, HashMap<String, String>, bool, bool);
 
@@ -61,9 +21,7 @@ impl Task for Rgb4bppWithTextConvertTask {
     let img =
       image::load_from_memory(&buf).map_err(|err| Error::new(Status::Unknown, err.to_string()))?;
 
-    let mut rgb8_img = img.into_rgb8();
-    dither(&mut rgb8_img, &Rgb4bppLevel);
-
+    let rgb8_img = img.into_rgb8();
     let (width, height) = rgb8_img.dimensions();
     let mut output_buf = Vec::new();
 
@@ -114,7 +72,7 @@ impl Task for Rgb4bppWithTextConvertTask {
 }
 
 #[napi]
-fn to_rgb_4bpp_with_text_metadata(
+fn to_png(
   image: Buffer,
   text_chunks: Option<HashMap<String, String>>,
   compressed_text: Option<bool>,

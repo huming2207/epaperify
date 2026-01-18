@@ -140,7 +140,7 @@ impl Task for Gray4bppWithTextConvertTask {
 }
 
 #[napi]
-fn to_4bpp_with_text_metadata(
+fn to_dithered_grey_with_png_txt(
   image: Buffer,
   text_chunks: Option<HashMap<String, String>>,
   compressed_text: Option<bool>,

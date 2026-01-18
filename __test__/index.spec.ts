@@ -4,17 +4,16 @@ import test from 'ava'
 
 import {
   diffTwoQoiImages,
-  imageToQoi,
-  to4Bpp,
-  to4BppWithTextMetadata,
+  toDitheredGreyImage,
+  toDitheredGreyWithPngTxt,
   toMonochrome,
-  toRgb4Bpp,
-  toRgb4BppWithTextMetadata,
+  toPng,
+  toRgbImage,
 } from '../index'
 
-test('Read test1 and convert to 4bpp', async (t) => {
+test('Read test1 and convert to 4bpp greyscale', async (t) => {
   const input = await fs.readFile('./__test__/test1.png')
-  const output = await to4Bpp(input)
+  const output = await toDitheredGreyImage(input)
   t.true(output !== undefined)
   await fs.writeFile('./__test__/test1-4bpp.png', output)
 })
@@ -26,16 +25,16 @@ test('Read test1 and convert to monochrome', async (t) => {
   await fs.writeFile('./__test__/test1-mono.png', output)
 })
 
-test('Read test1 and convert to RGB 4bpp', async (t) => {
+test('Read test1 and convert to RGB image', async (t) => {
   const input = await fs.readFile('./__test__/test1.png')
-  const output = await toRgb4Bpp(input)
+  const output = await toRgbImage(input)
   t.true(output !== undefined)
-  await fs.writeFile('./__test__/test1-rgb-4bpp.png', output)
+  await fs.writeFile('./__test__/test1-rgb.png', output)
 })
 
 test('Read chickenfeet and convert to 4bpp', async (t) => {
   const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await to4Bpp(input)
+  const output = await toDitheredGreyImage(input)
   t.true(output !== undefined)
   await fs.writeFile('./__test__/chickenfeet-4bpp.png', output)
 })
@@ -49,51 +48,40 @@ test('Read chickenfeet and convert to monochrome', async (t) => {
 
 test('Read chickenfeet and convert to RGB 4bpp', async (t) => {
   const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await toRgb4Bpp(input)
+  const output = await toRgbImage(input)
   t.true(output !== undefined)
-  await fs.writeFile('./__test__/chickenfeet-rgb-4bpp.png', output)
+  await fs.writeFile('./__test__/chickenfeet-rgb.png', output)
 })
 
 test('Read chickenfeet and convert to 4bpp with tEXt', async (t) => {
   const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await to4BppWithTextMetadata(input, { foo: 'bar', test: '567' }, false)
+  const output = await toDitheredGreyWithPngTxt(input, { foo: 'bar', test: '567' }, false)
   t.true(output !== undefined)
   await fs.writeFile('./__test__/chickenfeet-4bpp-with-tEXt.png', output)
 })
 
 test('Read chickenfeet and convert to RGB 4bpp with tEXt', async (t) => {
   const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await toRgb4BppWithTextMetadata(input, { foo: 'bar', rgb: 'true' }, false)
+  const output = await toPng(input, { foo: 'bar', rgb: 'true' }, false)
   t.true(output !== undefined)
   await fs.writeFile('./__test__/chickenfeet-rgb-4bpp-with-tEXt.png', output)
 })
 
-test('Diff chickenfeet and chickenfeet-4bpp', async (t) => {
-  const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const inputQoi = await imageToQoi(input)
-  const bppQoi = await to4Bpp(input, 'qoi')
-  const output = await diffTwoQoiImages(inputQoi, bppQoi)
+test('Diff countdown', async (t) => {
+  const oldPng = await fs.readFile('./__test__/countdown-56.png')
+  const newPng = await fs.readFile('./__test__/countdown-18.png')
+  const oldQoi = await toRgbImage(oldPng, 'qoi')
+  const newQoi = await toRgbImage(newPng, 'qoi')
+  const output = await diffTwoQoiImages(newQoi, oldQoi)
   t.true(output !== undefined)
-  await fs.writeFile('./__test__/chickenfeet-diff.bin', output)
+  await fs.writeFile('./__test__/countdown-diff.bin', output)
+  await fs.writeFile('./__test__/countdown-56.qoi', oldQoi)
+  await fs.writeFile('./__test__/countdown-18.qoi', newQoi)
 })
 
-test('Read chickenfeet and convert to 4bpp with QOI output', async (t) => {
+test('Convert JPG to RGB QOI image', async (t) => {
   const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await to4Bpp(input, 'qoi')
+  const output = await toRgbImage(input, 'qoi')
   t.true(output !== undefined)
-  await fs.writeFile('./__test__/chickenfeet-4bpp.qoi', output)
-})
-
-test('Read chickenfeet and convert to RGB 4bpp with QOI output', async (t) => {
-  const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await toRgb4Bpp(input, 'qoi')
-  t.true(output !== undefined)
-  await fs.writeFile('./__test__/chickenfeet-rgb-4bpp.qoi', output)
-})
-
-test('Read chickenfeet and convert to QOI', async (t) => {
-  const input = await fs.readFile('./__test__/chickenfeet.jpg')
-  const output = await imageToQoi(input)
-  t.true(output !== undefined)
-  await fs.writeFile('./__test__/chickenfeet.qoi', output)
+  await fs.writeFile('./__test__/chickenfeet-rgb.qoi', output)
 })

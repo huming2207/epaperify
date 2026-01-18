@@ -87,46 +87,22 @@ impl Task for Gray4bppConvertTask {
       Err(err) => return Err(Error::new(Status::Unknown, err.to_string())),
     };
 
-    let is_qoi = self.1.eq_ignore_ascii_case("qoi");
-    let format = if !is_qoi {
-      match ImageFormat::from_extension(&self.1) {
-        Some(format_str) => Some(format_str),
-        None => {
-          return Err(Error::new(
-            Status::InvalidArg,
-            format!("Unknown image format: {}", self.1),
-          ))
-        }
-      }
-    } else {
-      None
+    let format = match ImageFormat::from_extension(&self.1) {
+      Some(format) => format,
+      None => return Err(Error::new(
+        Status::InvalidArg,
+        format!("Unknown image format: {}", self.1),
+      )),
     };
 
     let mut luma8_img = img.grayscale().into_luma8();
     dither(&mut luma8_img, &Gray4bppLevel);
 
-    if is_qoi {
-      let width = luma8_img.width();
-      let height = luma8_img.height();
-      let raw = luma8_img.as_raw();
-      let mut rgb_data = Vec::with_capacity(raw.len() * 3);
-      for &l in raw {
-        rgb_data.extend_from_slice(&[l, l, l]);
-      }
-      match qoi::encode_to_vec(&rgb_data, width, height) {
-        Ok(vec) => Ok(vec.into()),
-        Err(e) => Err(Error::new(
-          Status::GenericFailure,
-          format!("QOI encoding failed: {}", e),
-        )),
-      }
-    } else {
-      let output_img = DynamicImage::from(image::DynamicImage::ImageLuma8(luma8_img));
-      let mut output_vec = Cursor::new(Vec::new());
-      match output_img.write_to(&mut output_vec, format.unwrap()) {
-        Ok(()) => Ok(output_vec.into_inner().into()),
-        Err(err) => Err(Error::new(Status::Unknown, err.to_string())),
-      }
+    let output_img = DynamicImage::from(image::DynamicImage::ImageLuma8(luma8_img));
+    let mut output_vec = Cursor::new(Vec::new());
+    match output_img.write_to(&mut output_vec, format) {
+      Ok(()) => Ok(output_vec.into_inner().into()),
+      Err(err) => Err(Error::new(Status::Unknown, err.to_string())),
     }
   }
 
@@ -136,7 +112,7 @@ impl Task for Gray4bppConvertTask {
 }
 
 #[napi]
-fn to_4bpp(
+fn to_dithered_grey_image(
   image: Buffer,
   format: Option<String>,
   signal: Option<AbortSignal>,
